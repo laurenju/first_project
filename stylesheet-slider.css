@@ -72,51 +72,57 @@ p {
 	padding: 10px;
 }
 
-.slideshow {
-	width: 600px;
-	height: 500px;
-	overflow: hidden;
-	background-color: #FFFFFF;
-	border: 1px dashed #990000;
+.slider {
+	height: 240px;
+	width: 400px;
 }
 
-.slideshow ul {
-	margin: 0;
-	padding: 0;
+.slider li {
+	list-style: none;
+	position: absolute;
+	position: bottom;
 }
 
-.slideshow ul li {
-	display: inline;
-	margin: 0px;
-	padding: 0px;
-	margin-right: -1px;
+.slider img {
+	vertical-align: top;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
 }
 
-.slideshow ul li div {
-  display: none;
-  text-decoration: none;
-  float:left;
+.slider input {
+	display: none;
 }
 
-.slideshow ul li div a img {
-	border: 2px solid #FFFFFF;
-	width: 332px;
-	height: 375px;
-}
-
-/* thumbnail size */
-.slideshow ul li img {
-	border: 2px solid #FFFFFF;
-	margin: 0px;
-	padding: 0px;
-	width: 80px;
-	height: 60px;
-}
-/* Shows slides when mouse pointer is over a thumbnail image */
-.slideshow ul li:hover div {
+.slider label {
+	background-color: #990000;
+	bottom: 8px;
+	cursor: pointer;
 	display: block;
+	height: 8px;
+	position: absolute;
+	width: 8px;
+	z-index: 10;
 }
-/* Highlights the thumbnail image when mouse pointer is over it */
-.slideshow ul li:hover img {
-	border-color: #FF6600;
+
+.slider li:nth-child(1) label {
+	left: 10px;
+}
+
+.slider li:nth-child(2) label {
+	left: 30px;
+}
+
+.slider li:nth-child(3) label {
+	left: 50px;
+}
+
+.slider li:nth-child(4) label {
+	left: 70px;
+}
+
+.slider li input:checked ~ img {
+	opacity: 1;
+	visibility: visible;
+	z-index: 10;
 }
